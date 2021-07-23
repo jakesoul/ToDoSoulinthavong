@@ -97,7 +97,8 @@ namespace ToDoSoulinthavong.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime?>("DueDate")
                         .IsRequired()

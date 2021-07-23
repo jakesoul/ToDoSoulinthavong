@@ -10,7 +10,7 @@ using ToDoSoulinthavong.Models;
 namespace ToDoSoulinthavong.Migrations
 {
     [DbContext(typeof(ToDoContext))]
-    [Migration("20210705004155_initial")]
+    [Migration("20210723164559_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,7 +99,8 @@ namespace ToDoSoulinthavong.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime?>("DueDate")
                         .IsRequired()
